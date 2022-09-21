@@ -35,10 +35,33 @@ ggsave("scatterplot_penguins.pdf", plot = scatterplot_penguins)
 
 Problem 2
 
+```{r}
+set.seed(1)
+df2 = tibble(normal_vec = rnorm(10),
+             logic_vec = normal_vec > 0,
+             char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+             factor_vec = factor(c("A", "B", "C", "A", "A", "B", "B", "B", "C", "C"))
+)
+df2
+summary(df2)
+```
 
+```{r}
+normal_vec = pull(df2, 1)
+logic_vec = pull(df2, 2)
+char_vec = pull(df2, 3)
+factor_vec = pull(df2, 4)
+mean(normal_vec)
+mean(logic_vec)
+mean(char_vec)
+mean(factor_vec)
+```
 
-
-
-
+```{r, eval=False}
+as.numeric(normal_vec)
+as.numeric(logic_vec)
+as.numeric(char_vec)
+as.numeric(factor_vec)
+```
 
 
