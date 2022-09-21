@@ -1,0 +1,44 @@
+---
+title: "p8105_hw1_zq2209"
+author: "Zining Qi"
+date: "2022-09-21"
+output: github_document
+---
+```{r}
+library(tidyverse)
+```
+
+
+Problem 1
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+```{r}
+summary(penguins)
+ncol(penguins)
+nrow(penguins)
+```
+
+The dataset contains 8 variables, which are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. Species, island and sex are qualitative variables. Others are quantitative variables. 
+
+The size of the dataset is 344 rows by 8 columns, 344 X 8.
+
+The mean for flipper length is 200.9mm. 
+
+```{r}
+scatterplot_penguins = ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, col = species)) + geom_point()
+ggsave("scatterplot_penguins.pdf", plot = scatterplot_penguins)
+```
+
+
+
+Problem 2
+
+
+
+
+
+
+
+
